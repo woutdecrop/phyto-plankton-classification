@@ -40,8 +40,8 @@ You can find more information about it in the [iMagine Marketplace](https://dash
 
 ## Installing this module
 
-### Local installation (not recommended)
-Although a local installation is possible, we recommend an installation through docker. This is less likely to breake support and has been tested with latest updates. We are working with python 3.6.9 which can be difficult to install. 
+### Local installation
+
 > **Requirements**
 >
 > This project has been tested in Ubuntu 18.04 with Python 3.6.9. Further package requirements are described in the
@@ -51,7 +51,7 @@ Although a local installation is possible, we recommend an installation through 
 > - Run `python -c 'import cv2'` to check that you installed correctly the `opencv-python` package (sometimes
 > [dependencies are missed](https://stackoverflow.com/questions/47113029/importerror-libsm-so-6-cannot-open-shared-object-file-no-such-file-or-directo) in `pip` installations).
 
-To start using this framework clone the repo and download the [default weights](https://share.services.ai4os.eu/index.php/s/rJQPQtBReqHAPf3/download):
+To start using this framework clone the repo and download the [default weights](https://api.cloud.ifca.es:8080/swift/v1/imagenet-tf/default_imagenet.tar.xz):
 
 ```bash
 # First line installs OpenCV requirement
@@ -63,7 +63,9 @@ curl -o ./models/phytoplankton_vliz.tar.xz https://share.services.ai4os.eu/index
 cd models && tar -xf phytoplankton_vliz.tar.xz && rm phytoplankton_vliz.tar.xz
 ```
 
-### Install through Docker (recommended)
+
+
+### Install through Docker
 
 #### 1.1 Install docker
 Install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/). 
@@ -82,17 +84,9 @@ cd phyto-plankton-classification
 #### 1.4 Run the docker container inside the local folder
 
 After docker is installed and running, you can run the ready-to-use [Docker container](https://hub.docker.com/r/deephdc/uc-lifewatch-deep-oc-phyto-plankton-classification) to
-run this module. There are two options for handling images based on their storage location:
+run this module. To run it:
 
-1. **Images are on a remote server (NEXTCLOUD)**:  
-   If the images are stored on the NEXTCLOUD server, follow the instructions outlined in [Option 1: Remote Server](#option 1: images are on remote server (NEXTCLOUD)).
-
-2. **Images are local**:  
-   If the images are stored locally on your device, refer to [Option 2: Local Images](#option-2-local-images).
-
-Please choose the appropriate option based on where your images are stored. 
-
-##### option 1: images are on remote server (NEXTCLOUD)
+##### option 1
 Run container and activate acess to nextcloud server through rclone.
 
 If you rclone the credentials (see [Tutorial](https://docs.ai4eosc.eu/en/latest/user/howto/rclone.html#configuring-rclone)) from the [NEXTCLOUD](https://share.services.ai4os.eu/index.php/apps/dashboard/) server, you can also create a direct link to these credentials through one line of code. 
@@ -137,7 +131,7 @@ docker run -ti -p 8888:8888 -p 5000:5000 -v "LOCATION/rclone.conf:/root/.config/
 ```
 
 
-##### option 2: images are local
+##### option 2
 Run container and only have local access
 All files can be locally saved but rclone needs to be configured after activation to acces nextcloud server, follow [Tutorial](https://docs.ai4eosc.eu/en/latest/user/howto/rclone.html#configuring-rclone)
 ```bash
