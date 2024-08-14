@@ -113,16 +113,16 @@ The first step to train you image classifier if to have the data correctly set u
 
 ### 1.1 Prepare the images
 
-The model needs to be able to access the images. So you have to place your images in the`./data/images` folder. If you have your data somewhere else you can use that location by setting the `image_dir` parameter in the training args. 
+The model needs to be able to access the images. So you have to place your images in the [./data/images](/data/images) folder. If you have your data somewhere else you can use that location by setting the `image_dir` parameter in the training args. 
 Please use a standard image format (like `.png` or `.jpg`). 
 
-You can copy the images to 'phyto-plankton-classification/data/images' folder on your pc. 
+You can copy the images to [phyto-plankton-classification/data/images](/data/images) folder on your pc. 
 If the images are on nextcloud, you can one of the next steps depending if you have rclone or not. 
 
 
 ### 1.2 Prepare the data splits (optional)
 
-Next, you need add to the `./data/dataset_files` directory the following files:
+Next, you need add to the [./data/dataset_files](/data/dataset_files) directory the following files:
 
 | *Mandatory files* | *Optional files*  | 
 |:-----------------------:|:---------------------:|
@@ -134,7 +134,7 @@ The `classes.txt` file translates those label numbers to label names.
 The `aphia_ids.txt` file translates those the classes to their corresponding aphia_ids.
 Finally the `info.txt` allows you to provide information (like number of images in the database) about each class. 
 
-You can find examples of these files at  `./data/demo-dataset_files`.
+You can find examples of these files at [./data/demo-dataset_files](/data/demo-dataset_files).
 
 If you don't want to create your own datasplit, this will be done automatically for you with a 80% train, 10% validation, and 10% test split.
 
@@ -144,7 +144,7 @@ If you don't want to create your own datasplit, this will be done automatically 
 ### 2.1: Train with cmd
 
 #### 2.1.1: Adapting the yaml file
-Clarify the location of the images inside the [yaml file](/etc/config.yaml) file. If not, 'data/images' will be taken. 
+Clarify the location of the images inside the [yaml file](/etc/config.yaml) file. If not, [./data/images](/data/images) will be taken. 
 Any additional parameter can also be changed here such as the type of split for training/validation/testing, batch size, etc
 
 You can change the config file directly as shown below, or you can change it when running the api.
@@ -163,7 +163,7 @@ After this, you can go to `/srv/phyto-plankton-classification/planktonclas#` and
 cd /srv/phyto-plankton-classification/planktonclas` 
 python train_runfile.py
 ```
-The new model will be saved under phyto-plankton-classification/models
+The new model will be saved under [phyto-plankton-classification/models](/models)
 
 ### 2.2: Train with Jupyter Notebooks (Recommended)
 #### 2.2.1: Adapting the yaml file
