@@ -79,20 +79,20 @@ git clone https://github.com/lifewatch/phyto-plankton-classification
 cd phyto-plankton-classification
 ```
 
-#### 1.4 Run the docker container inside the local folder
+#### 1.4 Run the Docker Container Inside the Local Folder
 
-After docker is installed and running, you can run the ready-to-use [Docker container](https://hub.docker.com/r/deephdc/uc-lifewatch-deep-oc-phyto-plankton-classification) to
-run this module. There are two options for handling images based on their storage location:
+After Docker is installed and running, you can run the ready-to-use [Docker container](https://hub.docker.com/r/deephdc/uc-lifewatch-deep-oc-phyto-plankton-classification) to run this module. There are two options for handling images based on their storage location:
 
 1. **Images are on a remote server (NEXTCLOUD)**:  
-   If the images are stored on the NEXTCLOUD server, follow the instructions outlined in [Option 1: Remote Server](#option 1: images are on remote server (NEXTCLOUD)).
+   If the images are stored on the NEXTCLOUD server, follow the instructions outlined in [Option 1: Images Are on Remote Server (NEXTCLOUD)](#option-1-images-are-on-remote-server-nextcloud).
 
 2. **Images are local**:  
-   If the images are stored locally on your device, refer to [Option 2: Local Images](#option-2-local-images).
+   If the images are stored locally on your device, refer to [Option 2: Local Images](#option-2-images-are-local).
 
-Please choose the appropriate option based on where your images are stored. 
+Please choose the appropriate option based on where your images are stored.
 
-##### option 1: images are on remote server (NEXTCLOUD)
+##### Option 1: Images Are on Remote Server (NEXTCLOUD)
+
 Run container and activate acess to nextcloud server through rclone.
 
 If you rclone the credentials (see [Tutorial](https://docs.ai4eosc.eu/en/latest/user/howto/rclone.html#configuring-rclone)) from the [NEXTCLOUD](https://share.services.ai4os.eu/index.php/apps/dashboard/) server, you can also create a direct link to these credentials through one line of code. 
