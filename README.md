@@ -167,7 +167,7 @@ The new model will be saved under [phyto-plankton-classification/models](/models
 
 ### 2.2: Train with Jupyter Notebooks (Recommended)
 #### 2.2.1: Adapting the yaml file
-Similar to [2.1.2: Running the training](#2.1.2:_Running_the_training),clarify the location of the images inside the [yaml file](/etc/config.yaml) file. If not, 'data/images' will be taken. 
+Similar to [2.1.2: Running the training](#2.1.2:_Running_the_training),clarify the location of the images inside the [yaml file](/etc/config.yaml) file. If not, [./data/images](/data/images) will be taken. 
 Any additional parameter can also be changed here such as the type of split for training/validation/testing, batch size, etc
 
 You can change the config file directly as shown below.
@@ -205,7 +205,7 @@ now run DEEPaaS:
 ```
 deepaas-run --listen-ip 0.0.0.0
 ```
-and open http://0.0.0.0:5000/ui and look for the methods belonging to the `planktonclas` module.
+and open http://0.0.0.0:5000/ui (or http://127.0.0.1:5000/api#/) and look for the methods belonging to the `planktonclas` module.
 Look for the ``TRAIN`` POST method. Click on 'Try it out', change whatever training args
 you want and click 'Execute'. The training will be launched and you will be able to follow its status by executing the 
 ``TRAIN`` GET method which will also give a history of all trainings previously executed.
@@ -249,7 +249,7 @@ now run DEEPaaS:
 ```
 deepaas-run --listen-ip 0.0.0.0
 ```
-Go to http://0.0.0.0:5000/ui and look for the `PREDICT` POST method. Click on 'Try it out', change whatever test args
+Go to http://0.0.0.0:5000/ui (or http://127.0.0.1:5000/api#/) and look for the `PREDICT` POST method. Click on 'Try it out', change whatever test args
 you want and click 'Execute'. You can **either** supply a:
 
 * a `image` argument with a path pointing to an image.
@@ -262,8 +262,8 @@ you want and click 'Execute'. You can **either** supply a:
 Follow the notebook for [computing the predictions](./notebooks/3.0-Computing_predictions.ipynb)
 Make sure to select DEMO or not if you want to predict your own data of the demo data as an example.
 
-# Extra information
-### activation of jupyter notebook
+## Extra information
+### Activation of jupyter notebook
 You can also activate the jupyter notebooks inside the docker container and work from there. 
 ```
 deep-start -j
