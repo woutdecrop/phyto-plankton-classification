@@ -61,9 +61,9 @@ def train_fn(TIMESTAMP, CONF):
 
     if 'train.txt' not in os.listdir(paths.get_ts_splits_dir()):
         if not (CONF['dataset']['split_ratios']):
-            if (CONF['training']['use_validation']) & (CONF['testing']['use_test']):
+            if (CONF['training']['use_validation']) & (CONF['training']['use_test']):
                 split_ratios=[0.8,0.1,0.1]
-            elif (CONF['training']['use_validation']) & (~CONF['testing']['use_test']):
+            elif (CONF['training']['use_validation']) & (~CONF['training']['use_test']):
                 split_ratios=[0.9,0.1,0]
             else:
                 split_ratios=[1,0,0]
@@ -200,7 +200,7 @@ def train_fn(TIMESTAMP, CONF):
 
     print('Finished training')
 
-    if CONF['testing']['use_test']:
+    if CONF['training']['use_test']:
         print("Start testing")
         X_test, y_test = load_data_splits(splits_dir=paths.get_ts_splits_dir(),
                                         im_dir=paths.get_images_dir(),
