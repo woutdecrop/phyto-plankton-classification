@@ -68,7 +68,6 @@ def predict(model, X, conf, top_K=None, crop_num=10, filemode='local', merge=Fal
 
     output = output.reshape(len(X), -1, output.shape[-1])  # reshape to (N, crop_number, num_classes)
     output = np.mean(output, axis=1)  # take the mean across the crops
-    print("outut ok")
     if merge:
         output = np.mean(output, axis=0)  # take the mean across the images
         lab = np.argsort(output)[::-1]  # sort labels in descending prob
@@ -80,7 +79,6 @@ def predict(model, X, conf, top_K=None, crop_num=10, filemode='local', merge=Fal
         lab = lab[:, :top_K]  # keep only top_K labels
         prob = output[np.repeat(np.arange(len(lab)), lab.shape[1]),
         lab.flatten()].reshape(lab.shape)  # retrieve corresponding probabilities
-        print("faltted")
     return lab, prob
 
 
